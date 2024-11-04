@@ -55,9 +55,7 @@ class Scene2 extends Phaser.Scene {
         fill: "yellow"
       });
   
-      // POWER UPS
-  
-      //2.1 Two Animations for the power ups
+
       this.anims.create({
         key: "red",
         frames: this.anims.generateFrameNumbers("power-up", {
@@ -77,30 +75,30 @@ class Scene2 extends Phaser.Scene {
         repeat: -1
       });
   
-      // 3.1
+
       this.physics.world.setBoundsCollision();
   
       this.powerUps = this.physics.add.group();
   
-      // 2.2 Add multiple objects
+
       var maxObjects = 4;
       for (var i = 0; i <= maxObjects; i++) {
         var powerUp = this.physics.add.sprite(16, 16, "power-up");
         this.powerUps.add(powerUp);
          powerUp.setRandomPosition(0, 0, game.config.width, game.config.height);
   
-        // set random animation
+
         if (Math.random() > 0.5) {
           powerUp.play("red");
         } else {
           powerUp.play("gray");
         }
   
-        // setVelocity
+
         powerUp.setVelocity(100, 100);
-        // 3.2
+
         powerUp.setCollideWorldBounds(true);
-        // 3.3
+
        powerUp.setBounce(1);
   
       }
