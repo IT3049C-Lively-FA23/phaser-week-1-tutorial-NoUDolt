@@ -34,4 +34,4 @@ class Scene1 extends Phaser.Scene {
       this.add.text(20, 20, "Loading game...");
       this.scene.start("playGame");
     }
-  }
+}
